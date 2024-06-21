@@ -10,19 +10,15 @@ import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.RegistryObject;
 
 public class ModItems {
-    public  static final DeferredRegister<Item> ITEMS =
+    public static final DeferredRegister<Item> ITEMS =
             DeferredRegister.create(ForgeRegistries.ITEMS, BODMod.MOD_ID);
 
-    public  static final RegistryObject<Item> CURSED_DAGGER = ITEMS.register("cursed_dagger",
-            () -> new SwordItem(
-                    Tiers.DIAMOND,
-                    7,
-                    2.5f,
-                    new Item.Properties()
-            ));
 
-    public  static void register(IEventBus eventBus)
-    {
-        ITEMS.register(eventBus);
+    public static final RegistryObject<Item> CURSED_DAGGER = ITEMS.register("cursed_dagger",
+            () -> new SwordItem(Tiers.DIAMOND, 1000, 2, new Item.Properties()));
+
+
+
+    public static void register(IEventBus eventBus) { ITEMS.register(eventBus);
     }
 }

@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:item/handheld",
+  "textures": {
+    "layer0": "blades_of_destiny:item/cursed_dagger"
+  }
+}
