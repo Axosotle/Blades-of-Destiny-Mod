@@ -120,6 +120,17 @@ repositories {
     // flatDir {
     //     dir 'libs'
     // }
+
+
+    // Cloth config
+    maven { url "https://maven.shedaniel.me/" }
+    //PlayerAnimator
+    maven {
+        name "KosmX's maven"
+        url 'https://maven.kosmx.dev/'
+    }
+    //BetterCombat
+    maven { url 'https://api.modrinth.com/maven' }
 }
 
 dependencies {
@@ -144,6 +155,25 @@ dependencies {
     // For more info:
     // http://www.gradle.org/docs/current/userguide/artifact_dependencies_tutorial.html
     // http://www.gradle.org/docs/current/userguide/dependency_management.html
+
+
+    //Mod dependencies
+
+    //Cloth Config
+    implementation fg.deobf("me.shedaniel.cloth:cloth-config-forge:${project.cloth_config_version}")
+    //modApi("me.shedaniel.cloth:cloth-config-forge:${project.cloth_config_version}")
+
+    //PlayerAnimator
+    implementation fg.deobf("dev.kosmx.player-anim:player-animation-lib-forge:${project.player_anim}")
+
+    //MixinExtras
+    compileOnly(annotationProcessor("io.github.llamalad7:mixinextras-common:${project.mixin_extras_version}"))
+    implementation(jarJar("io.github.llamalad7:mixinextras-forge:${project.mixin_extras_version}")) {
+        jarJar.ranged(it, "[${project.mixin_extras_version},)")
+    }
+
+    //BetterCombat
+    implementation fg.deobf("maven.modrinth:better-combat:${project.better_combat}")
 }
 
 // This block of code expands all declared replace properties in the specified resource targets.
@@ -196,9 +226,7 @@ publishing {
         }
     }
     repositories {
-        maven {
-            url "file://${project.projectDir}/mcmodsrepo"
-        }
+        maven { url "file://${project.projectDir}/mcmodsrepo" }
     }
 }
 
