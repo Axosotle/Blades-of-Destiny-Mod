@@ -1,0 +1,27 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "equipment",
+  "pattern": [
+    " SS",
+    " D",
+    "FG"
+  ],
+  "key": {
+    "S": {
+      "item": "minecraft:diamond"
+    },
+    "D": {
+      "item": "blades_of_destiny:cursed_shard"
+    },
+    "F": {
+      "item": "minecraft:blaze_rod"
+    },
+    "G": {
+      "item": "minecraft:gold_ingot"
+    }
+  },
+  "result": {
+    "item": "blades_of_destiny:cursed_dagger",
+    "count": 1
+  }
+}

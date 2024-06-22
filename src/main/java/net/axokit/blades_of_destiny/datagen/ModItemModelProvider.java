@@ -17,7 +17,10 @@ public class ModItemModelProvider extends ItemModelProvider {
     @Override
     protected void registerModels() {
         handheldItem(ModItems.CURSED_DAGGER);
+        simpleItem(ModItems.CURSED_SHARD);
     }
+
+
 
     private ItemModelBuilder simpleItem(RegistryObject<Item> item) {
         return withExistingParent(item.getId().getPath(),

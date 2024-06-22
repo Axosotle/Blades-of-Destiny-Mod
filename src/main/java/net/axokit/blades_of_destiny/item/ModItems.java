@@ -15,9 +15,11 @@ public class ModItems {
 
 
     public static final RegistryObject<Item> CURSED_DAGGER = ITEMS.register("cursed_dagger",
-            () -> new SwordItem(Tiers.IRON, 1000, 0, new Item.Properties()));
+            () -> new SwordItem(Tiers.WOOD, 1000, -2, new Item.Properties()));
 
 
+    public static final RegistryObject<Item> CURSED_SHARD = ITEMS.register("cursed_shard",
+            () -> new Item(new Item.Properties()));
 
     public static void register(IEventBus eventBus) { ITEMS.register(eventBus);
     }

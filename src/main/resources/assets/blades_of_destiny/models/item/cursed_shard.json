@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:item/generated",
+  "textures": {
+    "layer0": "blades_of_destiny:item/cursed_shard"
+  }
+}
