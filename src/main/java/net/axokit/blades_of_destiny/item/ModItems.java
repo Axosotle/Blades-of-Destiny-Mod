@@ -15,7 +15,7 @@ public class ModItems {
 
 
     public static final RegistryObject<Item> CURSED_DAGGER = ITEMS.register("cursed_dagger",
-            () -> new CursedDagger(Tiers.DIAMOND, 0, 0, new Item.Properties()));
+            () -> new CursedDagger(Tiers.DIAMOND, 0, -1.5f, new Item.Properties()));
 
 
     public static final RegistryObject<Item> CURSED_SHARD = ITEMS.register("cursed_shard",

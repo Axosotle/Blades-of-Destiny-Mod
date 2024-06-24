@@ -1,5 +1,6 @@
 package net.axokit.blades_of_destiny;
 
+import net.axokit.blades_of_destiny.effect.ModEffects;
 import net.axokit.blades_of_destiny.item.ModItems;
 import com.mojang.logging.LogUtils;
 import net.minecraftforge.api.distmarker.Dist;
@@ -26,6 +27,8 @@ public class BODMod {
         modEventBus.addListener(this::commonSetup);
 
         MinecraftForge.EVENT_BUS.register(this);
+
+        ModEffects.register(modEventBus);
     }
 
     private void commonSetup(final FMLCommonSetupEvent event) {

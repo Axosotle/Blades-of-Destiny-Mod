@@ -1,6 +1,7 @@
 package net.axokit.blades_of_destiny.item;
 
 import net.minecraft.world.effect.MobEffect;
+import net.axokit.blades_of_destiny.effect.ModEffects;
 import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.entity.LivingEntity;
