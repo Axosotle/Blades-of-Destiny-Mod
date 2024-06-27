@@ -1,6 +1,7 @@
 package net.axokit.blades_of_destiny;
 
 import net.axokit.blades_of_destiny.effect.ModEffects;
+import net.axokit.blades_of_destiny.event.CustomHealthBarRenderer;
 import net.axokit.blades_of_destiny.item.ModItems;
 import com.mojang.logging.LogUtils;
 import net.minecraftforge.api.distmarker.Dist;
@@ -22,30 +23,33 @@ public class BODMod {
     public BODMod() {
         IEventBus modEventBus = FMLJavaModLoadingContext.get().getModEventBus();
 
+        // Регистрация предметов
         ModItems.register(modEventBus);
 
+        // Регистрация эффектов
+        ModEffects.register(modEventBus);
+
+        // Регистрация общих настроек
         modEventBus.addListener(this::commonSetup);
 
-        MinecraftForge.EVENT_BUS.register(this);
+        // Регистрация клиентских настроек
+        modEventBus.addListener(this::clientSetup);
 
-        ModEffects.register(modEventBus);
+        // Регистрация событий
+        MinecraftForge.EVENT_BUS.register(this);
     }
 
     private void commonSetup(final FMLCommonSetupEvent event) {
-
+        // Здесь можно разместить код, который должен выполняться на стороне сервера и клиента
     }
 
+    private void clientSetup(final FMLClientSetupEvent event) {
+        // Регистрация пользовательского рендерера здоровья
+        MinecraftForge.EVENT_BUS.register(CustomHealthBarRenderer.class);
+    }
 
     @SubscribeEvent
     public void onServerStarting(ServerStartingEvent event) {
-
-    }
-
-    @Mod.EventBusSubscriber(modid = MOD_ID, bus = Mod.EventBusSubscriber.Bus.MOD, value = Dist.CLIENT)
-    public static class ClientModEvents {
-        @SubscribeEvent
-        public static void onClientSetup(FMLClientSetupEvent event) {
-
-        }
+        // Здесь можно разместить код, который должен выполняться при запуске сервера
     }
 }

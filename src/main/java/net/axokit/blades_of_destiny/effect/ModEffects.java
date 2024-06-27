@@ -13,7 +13,7 @@ public class ModEffects {
             = DeferredRegister.create(ForgeRegistries.MOB_EFFECTS, BODMod.MOD_ID);
 
     public static final RegistryObject<MobEffect> CURSE = MOB_EFFECTS.register("curse",
-            () -> new СurseEffect(MobEffectCategory.HARMFUL,0xff0000));
+            () -> new CurseEffect(MobEffectCategory.HARMFUL,0xff0000));
 
 
     public static void register(IEventBus eventBus) {
